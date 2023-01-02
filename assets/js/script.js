@@ -51,7 +51,7 @@ function countDown(){
     }
 }
 function startCountDown(){
-    questionSeconds = 5;
+    questionSeconds = 30;
     counterFunction = setInterval("countDown()",1000);
 }
 function stopCountDown(){
@@ -111,7 +111,7 @@ function nexQ(action = null){
                                     `;
                                 }
                             }else{
-                                if(record == ''){
+                                if(record['submited_answer'] == ''){
                                     questionCorrection.innerHTML += `
                                         <div class='wrong-answer'>
                                             <p>Your answer:<i class='answer-icon fas fa-xmark'></i></p>
@@ -216,8 +216,6 @@ function saveAnswer(submitedAnswers){
 }
 //deals both with recorded answers and correct answers from server
 function calculScore(correctAnswers){
-    console.table(log);
-    console.table(correctAnswers);
     for(record of log){
         for(rightAnswer of correctAnswers){
             if(record['id_question'] == rightAnswer['id_question'] && record['submited_answer'] == rightAnswer['correct_answer_order']){
