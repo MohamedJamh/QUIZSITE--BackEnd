@@ -24,7 +24,7 @@ header {
   align-items: center;
   gap: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   header {
     flex-direction: column;
   }
@@ -75,9 +75,9 @@ header .timer span.icon {
   max-height: -webkit-max-content;
   max-height: -moz-max-content;
   max-height: max-content;
-  padding-top: 100px;
+  padding: 100px 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
     padding-top: 50px;
   }
@@ -94,7 +94,7 @@ header .timer span.icon {
 .container .greeting h1 {
   font-size: 80px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container .greeting h1 {
     font-size: 30px;
   }
@@ -103,7 +103,7 @@ header .timer span.icon {
   font-size: 25px;
   font-weight: 100;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container .greeting p, .container .greeting ul {
     font-size: 20px;
   }
@@ -117,7 +117,7 @@ header .timer span.icon {
   width: 80%;
   border-radius: 25px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container .questions {
     width: 100%;
     border-radius: 0px;
@@ -126,7 +126,7 @@ header .timer span.icon {
 .container .questions .header p {
   font-size: 50px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container .questions .header p {
     font-size: 25px;
   }
@@ -151,31 +151,12 @@ header .timer span.icon {
 .container .questions .answer p {
   font-size: 20px;
 }
-.container .questions .answer .answer-icon {
-  font-size: 25px;
-}
-.container .questions .answer .fa-xmark {
-  color: red;
-}
-.container .questions .answer .fa-check {
-  color: green;
-}
 .container .questions .selected {
   background-color: #0F3460;
   color: white;
   transition-duration: 0.5s;
   border: 4px solid #0F3460;
   font-weight: 700;
-}
-.container .questions .correct-answer {
-  background-color: #B2FFE5;
-  border-color: #6bf1c4;
-  color: #0F3460;
-}
-.container .questions .wrong-answer {
-  background-color: #edb2b2;
-  border-color: #f34646;
-  color: #0F3460;
 }
 .container .questions .footer {
   display: flex;
@@ -205,17 +186,67 @@ header .timer span.icon {
   height: 40px;
 }
 .container .result {
-  text-align: center;
   color: white;
 }
-.container .result * {
+.container .result .scores {
+  text-align: center;
+}
+.container .result .scores * {
   margin: 10px 5px;
 }
-.container .result p {
+.container .result .scores p {
   font-size: 40px;
 }
-.container .result small {
+.container .result .scores small {
   font-size: 20px;
+}
+
+#log {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 1000px;
+  padding: 20px 0;
+}
+@media (max-width: 1024px) {
+  #log {
+    width: 320px;
+    height: 600px;
+  }
+}
+#log .question-correction {
+  background-color: #533483;
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: 600;
+  width: 90%;
+}
+#log .question-correction > div {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+#log .question-correction .answer-icon {
+  font-size: 25px;
+  float: right;
+}
+#log .question-correction .fa-xmark {
+  color: red;
+}
+#log .question-correction .fa-check {
+  color: green;
+}
+#log .question-correction .correct-answer {
+  background-color: #B2FFE5;
+  border-color: #6bf1c4;
+  color: #0F3460;
+}
+#log .question-correction .wrong-answer {
+  background-color: #edb2b2;
+  border-color: #f34646;
+  color: #0F3460;
 }
 
 .btn {

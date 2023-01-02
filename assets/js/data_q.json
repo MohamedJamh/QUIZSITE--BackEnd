@@ -18,8 +18,8 @@
     {
       "question": "Un script PHP devrait commencer par ___ ?",
       "choice1": "<php", 
-      "choice2": "<?", 
-      "choice3": "<?php", 
+      "choice2": "<?",
+      "choice3": "<?php",
       "choice4": "php",
       "answer": "3"
     },
