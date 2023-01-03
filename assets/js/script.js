@@ -87,7 +87,6 @@ function nexQ(action = null){
 
             $.post("controllers/quiz.controller.php",{quizScore : score});
 
-            // death danger
             for(q of questions){
 
                 let questionCorrection = document.createElement('div');
@@ -142,7 +141,6 @@ function nexQ(action = null){
                 }
                 logContainer.appendChild(questionCorrection);
             }
-            //
 
         },'json');
         stopCountDown();
@@ -214,7 +212,6 @@ function saveAnswer(submitedAnswers){
     obj["submited_answer"] = submitedAnswers;
     log.push(obj);
 }
-//deals both with recorded answers and correct answers from server
 function calculScore(correctAnswers){
     for(record of log){
         for(rightAnswer of correctAnswers){

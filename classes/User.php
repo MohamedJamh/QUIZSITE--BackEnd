@@ -41,8 +41,7 @@ class user{
             (select an.answer_content from answers as an where an.order like 1 AND an.id_question like q.id_question ) as choice1,
             (select an.answer_content from answers as an where an.order like 2 AND an.id_question like q.id_question ) as choice2,
             (select an.answer_content from answers as an where an.order like 3 AND an.id_question like q.id_question ) as choice3,
-            (select an.answer_content from answers as an where an.order like 4 AND an.id_question like q.id_question ) as choice4,
-            q.correct_answer_order as answer
+            (select an.answer_content from answers as an where an.order like 4 AND an.id_question like q.id_question ) as choice4
             from quiz as quiz, answers as a, questions q
             where quiz.id = $idquiz
             AND quiz.id = q.id_quiz
@@ -59,7 +58,7 @@ class user{
     }
     function submitScore($id_quiz,$score,$ip,$os,$browser){
         $date = date('Y-m-d')." ".date("H:i:s");
-        $sql = "INSERT INTO `history`(`username`, `score`, `date`, `ip_adresse`, `os`, `browser`) VALUES ('$this->username','$score','$date','$this->ip_adresse','$this->os','$this->browser');";
+        $sql = "INSERT INTO `history`(`username`,`id_quiz`, `score`, `date`, `ip_adresse`, `os`, `browser`) VALUES ('$this->username',$id_quiz,'$score','$date','$this->ip_adresse','$this->os','$this->browser');";
         $req = Database::connect()->query($sql);
     }
 }

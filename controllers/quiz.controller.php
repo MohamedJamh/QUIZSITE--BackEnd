@@ -124,3 +124,6 @@ function logOut(){
     session_destroy();
     header("location: ../index.php");
 }
+// $result = $_SESSION['user']->getQuiz(1);
+// var_dump($result);
+// echo json_encode($result);
